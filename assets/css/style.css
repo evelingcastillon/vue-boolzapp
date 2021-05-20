@@ -22,5 +22,8 @@ img{
     height: 55px;
 }
 i{
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+.color_grey {
+    color: rgba(177, 177, 177, 1);
 }
