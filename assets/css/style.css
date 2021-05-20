@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: rgba(0, 150, 136, 1);
+    height: 17vh;
+    padding-top: 2vh;
+}
+main{
+    background-color: rgba(220, 219, 210, 1);
+    height: 83vh;
+
+}
+.h_15{
+    height: 15vh;
+    background-color: rgba(229, 229, 229, 1);
+}
+img{
+    width: 55px;
+    height: 55px;
+}
+i{
+    font-size: 2rem;
+}
