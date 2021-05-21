@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 </head>
 <body>
+    <!-- Header -->
     <div id="app">
-        <!-- Header -->
         <header>
             <div class="container bg-white">
                 <div class="row h_15" >
@@ -23,7 +23,7 @@
                         <i class="fas fa-circle-notch color_grey"></i>
                         <i class="fas fa-comment-alt color_grey"></i>
                         <i class="fas fa-ellipsis-v color_grey"></i>
-
+                                
                     </div>
                     <div class="col-6 d-flex align-items-center">
                         <img class="rounded-circle" src="./assets/img/avatar_1.jpg" alt="">
@@ -31,19 +31,18 @@
                             <div class="name">Michele</div>
                             <div class="online color_grey">Ultimo accesso alle</div>
                         </div>
-                        
                     </div>
                     <div class="col-2 d-flex align-items-center justify-content-around pl-5">
                         <i class="fas fa-search color_grey"></i>
                         <i class="fas fa-paperclip color_grey"></i>
                         <i class="fas fa-ellipsis-v color_grey"></i>
-                        
-                    </div>
+                    </div>    
                 </div>
+                    
             </div>
-        </header>
+            </header>
         <!-- /Header -->
-
+        
         <!-- Main -->
         <main>
             <div class="container">
@@ -52,50 +51,49 @@
                         <div class="row">
                             <div class="col-12 p-3 bg_celeste d-flex align-items-center">
                                 <i class="fas fa-bell-slash rounded-circle bg-white color_celeste p-3"></i>    
-                                <div class="content_text">
+                                <div class="content_text p-2">
                                     <div class="text">Ricevi notifiche di nuovi messaggi</div>
-                                    <div class="text color_grey">Attiva notifiche desktop</div>
+                                    <a class="text_link color_grey_dark">Attiva notifiche desktop</a>
                                 </div>
                             </div>
-                            <div class="col-12 p-3 bg_white_special d-flex align-items-start">
-                                <input type="text">
-                            </div>
-                            <div class="col-12 p-3 bg-white d-flex align-items-start">
-                                <img class='rounded-circle' src="./assets/img/avatar_1.jpg" alt="">    
-                                <div class="content_text">
-                                    <div class="text">Michele</div>
+                            <div class="col-12 bg_white_special d-flex align-items-start">
+                                <div class="row">
+                                    <div class="col-12 bg-white m-3 p-2">
+                                        <i class="fas fa-search color_grey"></i>
+                                        <input class="style_none" type="text" placeholder="Cerca o inizia una nuova chat">
+                                        
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-12 p-3 bg-white d-flex align-items-start">
-                                <img class='rounded-circle' src="./assets/img/avatar_2.jpg" alt="">    
-                                <div class="content_text">
-                                    <div class="text">Fabio</div>
-                                </div>
+
+                            <!-- contatti -->
+                            <div class="col-12 p-3 bg-white" v-for="(contact, index) in contacts">
+                                <img class='rounded-circle' :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">    
+                                <span>{{contact.name}}</span>
                             </div>
-                            <div class="col-12 p-3 bg-white d-flex align-items-start">
-                                <img class='rounded-circle' src="./assets/img/avatar_3.jpg" alt="">    
-                                <div class="content_text">
-                                    <div class="text">Samuele</div>
-                                </div>
-                            </div>
-                            <div class="col-12 p-3 bg-white d-flex align-items-start">
-                                <img class='rounded-circle' src="./assets/img/avatar_6.jpg" alt="">    
-                                <div class="content_text">
-                                    <div class="text">Luisa</div>
-                                </div>
-                            </div>
+                        
                         </div>
                     </div>
-                    <div class="col-8">
-                        
+                    <!-- second main -->
+                    <div class="col-8 chat_box p-0 d-flex align-items-end">
+                        <div class="row">
+                            <div class="col-12">
+                                
+                            </div>
+                        </div>
+                        <div class="input_chat bg_white_special_2 p-2 d-flex align-items-center justify-content-around">
+                            <i class="far fa-smile color_grey_dark"></i>
+                            <input class="style_none rounded" type="text" placeholder="Scrivi un messaggio">
+                            <i class="fas fa-microphone color_grey_dark"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
         <!-- /Main -->
-
     </div>
-
+        
+        
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
