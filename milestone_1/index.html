@@ -75,16 +75,61 @@
                         </div>
                     </div>
                     <!-- second main -->
-                    <div class="col-8 chat_box p-0 d-flex align-items-end">
+                    <div class="col-8 chat_box p-0 d-flex align-items-star">
                         <div class="row">
-                            <div class="col-12">
-                                
+                            <div class="col-12 px-5 chat_message">
+                                <!-- sent -->
+
+                                <div class="row">
+
+                                    <div class="col-12 py-2 px-4 sent d-flex justify-content-end">
+                                        <div class="msj bg_green rounded_special">
+                                            <div class="text text-center">{{contacts[0].messages[0].text}}</div>
+                                            <div class="color_grey_dark text-right pr-2">
+                                            <small>
+                                                {{contacts[0].messages[0].date}}
+
+                                            </small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 py-2 px-4 sent d-flex justify-content-end">
+                                        <div class="msj bg_green rounded_special">
+                                            <div class="text text-center">
+                                                {{contacts[0].messages[1].text}}
+                                            </div>
+                                            <div class="color_grey_dark text-right pr-2">
+                                                <small>{{contacts[0].messages[1].date}}</small>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- recevied -->
+                                    <div class="col-12 py-2 px-4 sent d-flex justify-content-start">
+                                        <div class="msj bg-white rounded_special">
+                                            <div class="text text-center">
+                                                {{contacts[0].messages[2].text}}
+
+                                            </div>
+                                            <div class="color_grey_dark text-right pr-2">
+                                                <small class="color_grey_dark">{{contacts[0].messages[2].date}}</small>
+
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="input_chat bg_white_special_2 p-2 d-flex align-items-center justify-content-around">
-                            <i class="far fa-smile color_grey_dark"></i>
-                            <input class="style_none rounded" type="text" placeholder="Scrivi un messaggio">
-                            <i class="fas fa-microphone color_grey_dark"></i>
+                            <div class="col-12">
+
+                                <div class="input_chat bg_white_special_2 p-2 d-flex align-items-center justify-content-around">
+                                    <i class="far fa-smile color_grey_dark"></i>
+                                    <input class="style_none rounded" type="text" placeholder="Scrivi un messaggio">
+                                    <i class="fas fa-microphone color_grey_dark"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

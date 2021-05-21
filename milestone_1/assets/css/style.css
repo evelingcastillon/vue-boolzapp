@@ -57,6 +57,12 @@ i{
     width: 100%;
     background-color: rgba(243, 238, 234, 1);
 }
+.chat_message {
+    height: calc(100% - 72px);
+}
+.input_chat{
+    height: 72px;
+}
 .input_chat > input {
     padding: 1rem;
     width: 670px;
@@ -64,4 +70,13 @@ i{
 }
 .color_grey_dark{
     color: rgba(107, 115, 118, 1);
+}
+.bg_green {
+    background-color: rgba(213, 249, 186, 1);
+}
+.msj {
+    width: 250px;
+}
+.rounded_special{
+    border-radius: 12px;
 }
