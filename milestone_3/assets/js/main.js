@@ -2,6 +2,12 @@ const app = new Vue ({
     el: '#app',
     data: {
         counter: 0,
+        myMessage: [{
+            date:'10/01/2020 16:30:00',
+            text: 'x',
+            status: 'sent'
+        }],
+        text: '',
         contacts: [
             {
                 name: 'Michele',
@@ -86,13 +92,19 @@ const app = new Vue ({
                     }
                 ],
             },
-        ]
+        ],
     
     },
     methods: {
         contattoSingolo(contact, index){
             return this.counter = index;
 
+        },
+        pushMessage(){
+            this.myMessage[0].text = this.text;
+            this.text = '';
+            console.log(this.myMessage[0].text);
+            
         }
     }
 });

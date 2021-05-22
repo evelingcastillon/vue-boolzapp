@@ -134,7 +134,7 @@
 
                                 <div class="input_chat bg_white_special_2 p-2 d-flex align-items-center justify-content-around">
                                     <i class="far fa-smile color_grey_dark"></i>
-                                    <input class="style_none rounded" type="text" placeholder="Scrivi un messaggio">
+                                    <input class="style_none rounded" type="text" placeholder="Scrivi un messaggio" v-model="text" @keyup.enter="pushMessage">
                                     <i class="fas fa-microphone color_grey_dark"></i>
                                 </div>
                             </div>
