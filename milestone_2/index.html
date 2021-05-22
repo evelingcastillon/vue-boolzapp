@@ -25,12 +25,15 @@
                         <i class="fas fa-ellipsis-v color_grey"></i>
                                 
                     </div>
-                    <div class="col-6 d-flex align-items-center">
-                        <img class="rounded-circle" src="./assets/img/avatar_1.jpg" alt="">
+                    <div class="col-6 d-flex align-items-center" :class ="contacts[counter]">
+                        <!-- {{contacts[counter].avatar}} -->
+                            
+                        <img class="rounded-circle" :src=" './assets/img/avatar' + contacts[counter].avatar + '.jpg' " alt="">
                         <div class="Contact">
-                            <div class="name">Michele</div>
+                            <div class="name">{{contacts[counter].name}}</div>
                             <div class="online color_grey">Ultimo accesso alle</div>
                         </div>
+
                     </div>
                     <div class="col-2 d-flex align-items-center justify-content-around pl-5">
                         <i class="fas fa-search color_grey"></i>
@@ -47,6 +50,10 @@
         <main>
             <div class="container">
                 <div class="row">
+
+
+                    <!-- /first main -->
+
                     <div class="col-4">
                         <div class="row">
                             <div class="col-12 p-3 bg_celeste d-flex align-items-center">
@@ -58,7 +65,7 @@
                             </div>
                             <div class="col-12 bg_white_special d-flex align-items-start">
                                 <div class="row">
-                                    <div class="col-12 bg-white m-3 p-2">
+                                    <div class="col-12 m-3 p-2">
                                         <i class="fas fa-search color_grey"></i>
                                         <input class="style_none" type="text" placeholder="Cerca o inizia una nuova chat">
                                         
@@ -67,29 +74,59 @@
                             </div>
 
                             <!-- contatti -->
-                            <div class="col-12 p-3 bg-white" v-for="(contact, index) in contacts">
-                                <img class='rounded-circle' :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">    
+                            <div class="col-12 contact p-3" v-for="(contact, index) in contacts" @click="contattoSingolo(contact, index)">
+                                <img class='rounded-circle contact' :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">    
                                 <span>{{contact.name}}</span>
                             </div>
                         
                         </div>
                     </div>
+
+                    <!-- /first main -->
+
+
+
+
                     <!-- second main -->
+                    
                     <div class="col-8 chat_box p-0 d-flex align-items-star">
                         <div class="row">
                             <div class="col-12 px-5 chat_message">
-                                <!-- sent -->
-
                                 <div class="row">
 
-                                    <div class="col-12" v-for="elem in contacts[counter].messages">
-                                        <div class="sent" v-if=" elem.status === 'sent' ">
-                                            {{elem.text}}
+                                    <div class="col-12" :class ="contacts[counter].messages">
+                                        <div class="mex" v-for="message in contacts[counter].messages">
+                                            
+                                        <!--{{message.text}}
+                                        {{message.status}}-->
+                                            <!-- sent -->
+                                            <div class="sent py-2 px-4 sent d-flex justify-content-end" v-if=" message.status === 'sent' ">
+                                                <div class="bg_green msj p-2 rounded_special">
+                                                    <div class="text pt-2 text-center"> {{message.text}}</div>
+                                                    <div class="color_grey_dark text-right pr-2">
+                                                        <small>
+                                                            {{message.date}}
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /sent -->
+
+                                            <!-- received -->
+
+                                            <div class="received py-2 px-4 sent d-flex justify-content-start" v-else>
+                                                <div class="bg-white msj p-2 rounded_special">
+                                                    <div class="text pl-3 pt-2 text-left">{{message.text}}</div>
+                                                    <div class="color_grey_dark text-right pr-2">
+                                                        <small>
+                                                            {{message.date}}
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /received -->
                                         </div>
-                                        <div class="received" v-else>
-                                            {{elem.text}}
-                                        </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>

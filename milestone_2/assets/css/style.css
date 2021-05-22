@@ -47,6 +47,14 @@ i{
 .style_none {
     border-style: none;
 }
+.contact{
+    background-color: white;
+    cursor: pointer;
+}
+.contact:hover {
+    background-color: rgba(233, 235, 235, 1);
+}
+/* second main */
 .chat_box {
     background-image: url('../img/mine.jpg');
     height: 518.400px;

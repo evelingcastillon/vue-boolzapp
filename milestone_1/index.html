@@ -82,6 +82,7 @@
                                 <div class="row">
                                     
                                     <div class="col-12" v-for="elem in contacts[counter].messages">
+                                        
                                         <div class="sent py-2 px-4 sent d-flex justify-content-end" v-if=" elem.status === 'sent' ">
                                             <div class="bg_green msj p-2 rounded_special">
                                                 <div class="text pt-2 text-center">{{elem.text}}</div>

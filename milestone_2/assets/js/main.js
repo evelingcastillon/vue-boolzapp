@@ -87,5 +87,12 @@ const app = new Vue ({
                 ],
             },
         ]
+    
+    },
+    methods: {
+        contattoSingolo(contact, index){
+            return this.counter = index;
+
+        }
     }
 });
