@@ -2,11 +2,18 @@ const app = new Vue ({
     el: '#app',
     data: {
         counter: 0,
-        myMessage: [{
+        myMessage: [
+            {
             date:'10/01/2020 16:30:00',
-            text: 'x',
+            text: '',
             status: 'sent'
-        }],
+            },
+            {
+            date: '10/01/2020 16:30:22',
+            text: 'ok',
+            status: 'received'
+            }
+        ],
         text: '',
         contacts: [
             {
@@ -103,8 +110,10 @@ const app = new Vue ({
         pushMessage(){
             this.myMessage[0].text = this.text;
             this.text = '';
-            console.log(this.myMessage[0].text);
-            
+
+            console.log(this.myMessage[0]);
+            setTimeout(myMessage[1], 1000);
+
         }
     }
 });
