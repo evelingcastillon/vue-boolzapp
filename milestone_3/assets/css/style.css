@@ -67,6 +67,11 @@ i{
 }
 .chat_message {
     height: calc(100% - 72px);
+    overflow-y: scroll;
+    overflow-x: none;
+}
+.chat_message > .row {
+    width: 100% ;
 }
 .input_chat{
     height: 72px;

@@ -97,12 +97,21 @@ const app = new Vue ({
         },
         pushMessage(){
             this.contacts[this.counter].messages.push({
-                date: '10/01/2020 15:30:55',
+                date: new Date().toLocaleString(),
                 text: this.text,
                 status: 'sent'
             });
-            this.text = '';
-            console.log(this.contacts[counter].messages);
+            this.text = ''; 
+            this.messageReceived()
+        },
+        messageReceived(){
+            setTimeout(() => {
+                this.contacts[this.counter].messages.push({
+                    date: new Date().toLocaleString(),
+                    text: 'Ok',
+                    status: 'received'
+                })
+            }, 1000);
         }
     }
 });
